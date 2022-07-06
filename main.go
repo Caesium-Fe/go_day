@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"go_day/day1"
+	"go_day/day2"
 	"go_day/learn"
 	"strconv"
 )
@@ -31,4 +32,7 @@ func main() {
 	fmt.Println(varsa2)
 	learn.Abspath()
 	// learn.Day2()
+	// day2.Test1()
+	// day2.Test2()
+	day2.Test3()
 }
