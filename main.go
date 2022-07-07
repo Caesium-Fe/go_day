@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"go_day/day1"
 	"go_day/day2"
+	"go_day/day3"
 	"go_day/learn"
 	"strconv"
 )
@@ -35,4 +36,5 @@ func main() {
 	// day2.Test1()
 	// day2.Test2()
 	day2.Test3()
+	day3.Dif_var_make()
 }
