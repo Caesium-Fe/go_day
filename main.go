@@ -6,6 +6,7 @@ import (
 	"go_day/day1"
 	"go_day/day2"
 	"go_day/day3"
+	"go_day/day4"
 	"go_day/learn"
 	"strconv"
 )
@@ -13,8 +14,17 @@ import (
 func main() {
 	fmt.Println("Hello World!")
 	// day1.Test1()
+	day4.Test1()
 	day1.Test2()
 
+	var d [2]string
+	d[0] = "cmn"
+	d[1] = "fkxkvlsd"
+	fmt.Println(d)
+	//make只能给slice，map，channel分配内存
+	// d := make([3]string)
+	// d[0] = "cmn"
+	// fmt.Println(d)
 	//print(len("abcdefghijk"))
 	//learn.Recursion()
 	learn.Mutex1()
