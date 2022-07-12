@@ -7,6 +7,7 @@ import (
 	"go_day/day2"
 	"go_day/day3"
 	"go_day/day4"
+	"go_day/day5"
 	"go_day/learn"
 	"strconv"
 )
@@ -14,6 +15,7 @@ import (
 func main() {
 	fmt.Println("Hello World!")
 	// day1.Test1()
+	day5.Test1()
 	day4.Test1()
 	day1.Test2()
 
