@@ -17,6 +17,7 @@ import (
 func main() {
 	fmt.Println("Hello World!")
 	day7.Test1()
+	day7.Test2()
 	day6.Test1()
 	// day1.Test1()
 	day5.Test1()
