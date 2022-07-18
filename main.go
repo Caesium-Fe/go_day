@@ -16,6 +16,7 @@ import (
 
 func main() {
 	fmt.Println("Hello World!")
+	day7.Jiujiu()
 	day7.Test1()
 	day7.Test2()
 	day6.Test1()
