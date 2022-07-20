@@ -15,6 +15,9 @@ import (
 )
 
 func main() {
+	learn.Sumr()
+	learn.Find_two_index()
+	learn.Scan_test()
 	fmt.Println("Hello World!")
 	day7.Jiujiu()
 	day7.Test1()
