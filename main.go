@@ -15,6 +15,9 @@ import (
 )
 
 func main() {
+	learn.Test2_Sort()
+	learn.Test1_Append()
+	learn.Slice_index()
 	learn.Sumr()
 	learn.Find_two_index()
 	learn.Scan_test()
