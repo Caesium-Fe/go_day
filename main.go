@@ -10,11 +10,15 @@ import (
 	"go_day/day5"
 	"go_day/day6"
 	"go_day/day7"
+	"go_day/day8"
 	"go_day/learn"
 	"strconv"
 )
 
 func main() {
+	learn.Msgpack_demo()
+	learn.GobDemo()
+	day8.Test1()
 	learn.Test2_Sort()
 	learn.Test1_Append()
 	learn.Slice_index()

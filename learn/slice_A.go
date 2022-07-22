@@ -55,8 +55,8 @@ func Test1_Append() {
 //数组var a = [...]int{3, 7, 8, 9, 1}进行排序
 func Test2_Sort() {
 	var a = [...]int{3, 7, 8, 9, 1}
-	// sort.Ints(a[:])
-	sort.IntSlice(a[:])
+	sort.Ints(a[:])
+	// sort.IntSlice(a[:])
 	if a[0] == 0 {
 		fmt.Println()
 	}
