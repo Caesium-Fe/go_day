@@ -16,7 +16,8 @@ import (
 )
 
 func main() {
-	learn.Msgpack_demo()
+	learn.Map_all_test()
+	// learn.Msgpack_demo()
 	learn.GobDemo()
 	day8.Test1()
 	learn.Test2_Sort()

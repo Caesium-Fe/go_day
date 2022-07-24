@@ -2,8 +2,7 @@ package learn
 
 import (
 	"fmt"
-
-	"github.com/vmihailenco/msgpack"
+	// "github.com/vmihailenco/msgpack"
 )
 
 // msgpack demo
@@ -21,18 +20,19 @@ func Msgpack_demo() {
 		Gender: "男",
 	}
 	// marshal
-	b, err := msgpack.Marshal(p1)
-	if err != nil {
-		fmt.Printf("msgpack marshal failed,err:%v", err)
-		return
-	}
+	// b, err := msgpack.Marshal(p1)
+	// if err != nil {
+	// fmt.Printf("msgpack marshal failed,err:%v", err)
+	// return
+	// }
 
 	// unmarshal
 	var p2 Person
-	err = msgpack.Unmarshal(b, &p2)
-	if err != nil {
-		fmt.Printf("msgpack unmarshal failed,err:%v", err)
-		return
-	}
+	// err = msgpack.Unmarshal(b, &p2)
+	// if err != nil {
+	// fmt.Printf("msgpack unmarshal failed,err:%v", err)
+	// return
+	// }
 	fmt.Printf("p2:%#v\n", p2) // p2:main.Person{Name:"沙河娜扎", Age:18, Gender:"男"}
+	fmt.Printf("p2:%#v\n", p1)
 }
