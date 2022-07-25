@@ -11,11 +11,13 @@ import (
 	"go_day/day6"
 	"go_day/day7"
 	"go_day/day8"
+	"go_day/git_add"
 	"go_day/learn"
 	"strconv"
 )
 
 func main() {
+	git_add.Src()
 	learn.Map_all_test()
 	// learn.Msgpack_demo()
 	learn.GobDemo()
