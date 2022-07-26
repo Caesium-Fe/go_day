@@ -11,11 +11,13 @@ import (
 	"go_day/day6"
 	"go_day/day7"
 	"go_day/day8"
+	"go_day/day9"
 	"go_day/learn"
 	"strconv"
 )
 
 func main() {
+	day9.Dispatch_golden_coin()
 	day7.Test4()
 	day7.Test3()
 	if a := 1; false {

@@ -28,18 +28,20 @@ func get_count(name string) int {
 	var total, count int
 	get_coin_arr := []string{"e", "E", "i", "I", "o", "O", "u", "U"}
 	for _, char := range get_coin_arr {
-		count = strings.Count(name, y)
+		count = strings.Count(name, char)
 		total += count
 	}
 	return total
 }
 
-func dispatchCoin() {
+func dispatchCoin() int {
 	var everyTotal, eachTotal int
-
 	for _, name := range users {
+		// 获得当前名字人获得金币数量
 		eachTotal = get_count(name)
+		// 生成[name:num_coin]
 		distribution[name] = eachTotal
+		// 金币总数
 		everyTotal += eachTotal
 
 		// go func(x string) {
@@ -92,7 +94,8 @@ func dispatchCoin() {
 
 		// strings.Count(name, "")
 	}
-	return everyTotal
+	// 余下金币数量
+	return coins - everyTotal
 }
 
 func Dispatch_golden_coin() {
