@@ -16,6 +16,13 @@ import (
 )
 
 func main() {
+	day7.Test4()
+	day7.Test3()
+	if a := 1; false {
+	} else if b := 2; false {
+	} else {
+		println(a, b)
+	}
 	learn.Map_all_test()
 	// learn.Msgpack_demo()
 	learn.GobDemo()
