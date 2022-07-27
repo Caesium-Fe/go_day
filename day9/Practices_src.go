@@ -29,6 +29,16 @@ func get_count(name string) int {
 	get_coin_arr := []string{"e", "E", "i", "I", "o", "O", "u", "U"}
 	for _, char := range get_coin_arr {
 		count = strings.Count(name, char)
+		switch char {
+		case "i", "I":
+			count *= 2
+		case "o", "O":
+			count *= 3
+		case "u", "U":
+			count *= 4
+		default:
+			fmt.Println("the name is great")
+		}
 		total += count
 	}
 	return total
