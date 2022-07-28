@@ -86,3 +86,30 @@ func Test4() {
 	defer calc("BB", x, calc("B", x, y))
 	y = 20
 }
+
+func Defer_interface() {
+	fmt.Println("main", inc())
+	// result:
+	// test 3 1
+	// test 2 2
+	// inc 2
+	// test 1 3
+	// main 2
+}
+
+func inc() int {
+	t := &test{num: 0}
+	defer t.Inc(3).Inc(2).Inc(1)
+	fmt.Println("inc", t.num)
+	return t.num
+}
+
+type test struct {
+	num int
+}
+
+func (t *test) Inc(flag int) *test {
+	t.num++
+	fmt.Println("test", flag, t.num)
+	return t
+}
