@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"go_day/day1"
+	"go_day/day11"
 	"go_day/day2"
 	"go_day/day3"
 	"go_day/day4"
@@ -16,6 +17,8 @@ import (
 )
 
 func main() {
+	learn.No_name_type()
+	day11.Iota_learn()
 	learn.Read_file()
 	// learn.For_read_file()
 	learn.OpenAndClose()
