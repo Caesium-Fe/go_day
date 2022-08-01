@@ -2,7 +2,10 @@ module go_day
 
 go 1.18
 
-require github.com/vmihailenco/msgpack v4.0.4+incompatible
+require (
+	github.com/go-sql-driver/mysql v1.6.0
+	github.com/vmihailenco/msgpack v4.0.4+incompatible
+)
 
 require (
 	github.com/golang/protobuf v1.3.1 // indirect

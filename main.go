@@ -17,6 +17,7 @@ import (
 )
 
 func main() {
+	learn.Demo_sql_link()
 	learn.No_name_type()
 	day11.Iota_learn()
 	learn.Read_file()

@@ -66,9 +66,15 @@ func No_name_type() {
 	// "大王八  =>  大王八"
 }
 
+// type Person struct {
+// 	name string
+// 	city string
+// 	age  int8
+// }
+
 // 构造函数
-func newPerson(name, city string, age int8) *person {
-	return &person{
+func newPerson(name, city string, age int8) *Person {
+	return &Person{
 		name: name,
 		city: city,
 		age:  age,
