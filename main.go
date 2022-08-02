@@ -17,7 +17,12 @@ import (
 )
 
 func main() {
-	learn.Demo_sql_link()
+	learn.Use_copy_demo()
+	learn.Tag_use_demo()
+	// learn.Demo_sql_link()
+	learn.Json_xuliehua_demo()
+	learn.Demo_struct_inherit()
+	learn.Use_init_func()
 	learn.No_name_type()
 	day11.Iota_learn()
 	learn.Read_file()

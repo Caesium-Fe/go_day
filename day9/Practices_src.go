@@ -112,3 +112,51 @@ func Dispatch_golden_coin() {
 	left := dispatchCoin()
 	fmt.Println("剩下：", left)
 }
+
+/*
+1使用“面向对象”的思维方式编写一个学生信息管理系统。
+	1学生有id、姓名、年龄、分数等信息
+	2程序提供展示学生列表、添加学生、编辑学生信息、删除学生等功能
+*/
+type Student1 struct {
+	ID    int8
+	Name  string
+	Age   int8
+	Score int8
+}
+
+func creat_students() []*Student1 {
+	Studens = make([]*Student1, 0, 200)
+	for i := 0; i < 10; i++ {
+		stu := &Student1{
+			Name:  fmt.Sprintf("stu%02d", i),
+			Age:   i + 10,
+			ID:    i,
+			Score: 100 + i,
+		}
+		Studens = append(Studens, stu)
+	}
+
+	return Students
+}
+
+// 方法展示学生信息
+func (s *Student1) show_students() {
+	fmt.Println(s.ID, s.Name, s.Age, s.Score)
+}
+
+func Struct_of_studens() {
+	// 所有学生
+	Students := creat_students()
+	// 获取学生信息
+	for _, k := range Students {
+		k.show_students()
+	}
+
+	// 添加学生
+
+	// 修改学生信息
+
+	//删除学生
+
+}
