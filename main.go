@@ -17,6 +17,8 @@ import (
 )
 
 func main() {
+	// learn.Lianxiti1()
+	day11.Iota_test1()
 	learn.Use_copy_demo()
 	learn.Tag_use_demo()
 	// learn.Demo_sql_link()

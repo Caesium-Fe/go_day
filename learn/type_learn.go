@@ -18,7 +18,7 @@ type Bar3 struct {
 	y *Foo  // 8
 }
 
-type student struct {
+type student1 struct {
 	name string
 	age  int
 }
@@ -46,8 +46,8 @@ func No_name_type() {
 	// }
 
 	// 面试题
-	m := make(map[string]*student)
-	stus := []student{
+	m := make(map[string]*student1)
+	stus := []student1{
 		{name: "小王子", age: 18},
 		{name: "娜扎", age: 23},
 		{name: "大王八", age: 9000},
