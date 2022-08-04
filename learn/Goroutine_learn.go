@@ -35,10 +35,19 @@ func More_goroutine() {
 	wg1.Wait() // 等待所有登记的goroutine都结束
 }
 
+var m sync.Mutex
+
 func Lianxiti1() {
 	for i := 0; i < 5; i++ {
 		go func() {
+			// z := i
+			m.Lock()
 			fmt.Println(i)
+			m.Unlock()
 		}()
+		// go func(z int) {
+		// 	// z := i
+		// 	fmt.Println(z)
+		// }(i)
 	}
 }

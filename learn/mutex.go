@@ -10,6 +10,7 @@ var (
 	wg      sync.WaitGroup
 	mutex   sync.Mutex
 )
+
 func Mutex1() {
 	wg.Add(2)
 	go incCounter(1)

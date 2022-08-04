@@ -12,14 +12,15 @@ import (
 	_ "go_day/day6"
 	_ "go_day/day7"
 	_ "go_day/day8"
-	"go_day/learn"
+	"go_day/day9"
+	_ "go_day/learn"
 	_ "strconv"
-	"time"
 )
 
 func main() {
-	learn.Lianxiti1()
-	time.Sleep(time.Second)
+	day9.Test_of_sum()
+	// learn.Lianxiti1()
+	// time.Sleep(time.Second)
 	// day11.Iota_test1()
 	// learn.Use_copy_demo()
 	// learn.Tag_use_demo()

@@ -2,7 +2,9 @@ package day9
 
 import (
 	"fmt"
+	"math/rand"
 	"strings"
+	"sync"
 )
 
 /*
@@ -119,22 +121,22 @@ func Dispatch_golden_coin() {
 	2程序提供展示学生列表、添加学生、编辑学生信息、删除学生等功能
 */
 type Student1 struct {
-	ID    int8
+	ID    int
 	Name  string
-	Age   int8
-	Score int8
+	Age   int
+	Score int
 }
 
 func creat_students() []*Student1 {
-	Studens = make([]*Student1, 0, 200)
+	Students := make([]*Student1, 0, 200)
 	for i := 0; i < 10; i++ {
 		stu := &Student1{
 			Name:  fmt.Sprintf("stu%02d", i),
-			Age:   i + 10,
+			Age:   i,
 			ID:    i,
-			Score: 100 + i,
+			Score: i,
 		}
-		Studens = append(Studens, stu)
+		Students = append(Students, stu)
 	}
 
 	return Students
@@ -160,3 +162,67 @@ func Struct_of_studens() {
 	//删除学生
 
 }
+
+//使用 goroutine 和 channel 实现一个计算int64随机数各位数和的程序，例如生成随机数61345，计算其每个位数上的数字之和为19。
+
+var wg11 sync.WaitGroup
+
+func Test_of_sum() {
+	wg11.Add(1)
+	jobChan := make(chan int64, 1)
+	resultChan := make(chan int64, 100)
+	go randNum(jobChan)
+	for i := 0; i < 24; i++ {
+		wg11.Add(1)
+		go sumNum(jobChan, resultChan)
+	}
+	// 发现wg.Wait()要放在resultChan关闭之前
+	//不然会报“往关闭的通道里写入数据的错误"
+	wg11.Wait()
+	close(resultChan)
+	for ret := range resultChan {
+		fmt.Println(ret)
+	}
+}
+
+func randNum(jobChan chan<- int64) {
+	defer wg11.Done()
+	for i := 0; i < 100; i++ {
+		jobChan <- rand.Int63()
+	}
+	close(jobChan)
+}
+
+func sumNum(jobChan <-chan int64, resultChan chan<- int64) {
+	defer wg11.Done()
+	for v := range jobChan {
+		var s int64
+		for v > 0 {
+			s += v % 10
+			v = v / 10
+		}
+		resultChan <- s
+	}
+}
+
+// // 开启一个 goroutine 循环生成int64类型的随机数，发送到jobChan
+// func creat_randnum(){
+// 	var ranumb := make(chan int64)
+// 	defer wg11.Done()
+// 	wg11.Add(1)
+// 	go func(){
+// 		for i:=0;i<100;i++{
+// 			r:=rand.New(rand.NewSource(time.Now().UnixNano()))
+// 			ranumb<-r.Int63()
+// 		}
+// 		close(ranumb)
+// 	}()
+// 	// return ranumb
+// }
+
+// // 开启24个 goroutine 从jobChan中取出随机数计算各位数的和，将结果发送到resultChan
+// func cal_sum(){
+
+// }
+
+// // 主 goroutine 从resultChan取出结果并打印到终端输出
