@@ -180,9 +180,12 @@ func Test_of_sum() {
 	//不然会报“往关闭的通道里写入数据的错误"
 	wg11.Wait()
 	close(resultChan)
+	// i := 0
 	for ret := range resultChan {
 		fmt.Println(ret)
+		// i++
 	}
+	// fmt.Println(i)
 }
 
 func randNum(jobChan chan<- int64) {

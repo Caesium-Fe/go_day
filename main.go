@@ -12,13 +12,15 @@ import (
 	_ "go_day/day6"
 	_ "go_day/day7"
 	_ "go_day/day8"
-	"go_day/day9"
-	_ "go_day/learn"
+	_ "go_day/day9"
+	"go_day/learn"
 	_ "strconv"
 )
 
 func main() {
-	day9.Test_of_sum()
+	learn.Tcp_client()
+	// learn.Tcp_server()
+	// day9.Test_of_sum()
 	// learn.Lianxiti1()
 	// time.Sleep(time.Second)
 	// day11.Iota_test1()
