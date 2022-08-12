@@ -5,6 +5,7 @@ import (
 	_ "fmt"
 	_ "go_day/day1"
 	_ "go_day/day11"
+	"go_day/day13"
 	_ "go_day/day2"
 	_ "go_day/day3"
 	_ "go_day/day4"
@@ -13,12 +14,13 @@ import (
 	_ "go_day/day7"
 	_ "go_day/day8"
 	_ "go_day/day9"
-	"go_day/learn"
+	_ "go_day/learn"
 	_ "strconv"
 )
 
 func main() {
-	learn.Tcp_client()
+	day13.Defer_func()
+	// learn.Tcp_client()
 	// learn.Tcp_server()
 	// day9.Test_of_sum()
 	// learn.Lianxiti1()
