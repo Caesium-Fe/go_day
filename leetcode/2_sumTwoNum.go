@@ -1,12 +1,11 @@
 package leetcode
 
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+// Definition for singly-linked list.
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	// var tail *ListNode
@@ -21,12 +20,12 @@ func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	if sum > 9 {
 		return &ListNode{
 			Val:  sum - 10,
-			Next: addTwoNumbers(&ListNode{Val: 1, Next: nil}, addTwoNumbers(l1.Next, l2.Next)),
+			Next: AddTwoNumbers(&ListNode{Val: 1, Next: nil}, AddTwoNumbers(l1.Next, l2.Next)),
 		}
 	} else {
 		return &ListNode{
 			Val:  sum,
-			Next: addTwoNumbers(l1.Next, l2.Next),
+			Next: AddTwoNumbers(l1.Next, l2.Next),
 		}
 	}
 }
