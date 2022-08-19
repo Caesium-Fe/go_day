@@ -23,7 +23,10 @@ import (
 
 func main() {
 	// a := leetcode.LongestPalindrome("cbbd")
-	a := leetcode.LongestPalindrome("a")
+	// a := leetcode.LongestPalindrome("a")
+	// fmt.Println(a)
+	// a := leetcode.Convert("PAYPALISHIRING", 4)
+	a := leetcode.Convert("abcde", 1)
 	fmt.Println(a)
 	// day13.Defer_func()
 	// learn.Tcp_client()
