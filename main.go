@@ -26,7 +26,12 @@ func main() {
 	// a := leetcode.LongestPalindrome("a")
 	// fmt.Println(a)
 	// a := leetcode.Convert("PAYPALISHIRING", 4)
-	a := leetcode.Convert("abcde", 1)
+	// a := leetcode.Convert("abcde", 1)
+	// fmt.Println(a)
+	var strs []string
+	// strs = []string{"flower", "flow", "flight"}
+	strs = []string{"ab", "a"}
+	a := leetcode.LongestCommonPrefix(strs)
 	fmt.Println(a)
 	// day13.Defer_func()
 	// learn.Tcp_client()

@@ -22,7 +22,7 @@ func reverse(x int) int {
 	// 转成字符串方法
 	s := string(x)
 	r := []rune(s)
-	if string(r[0]) == '-' {
+	if string(r[0]) == "-" {
 		for i, j := 1, len(r)-1; i < len(r)/2; i, j = i+1, j-1 {
 			r[i], r[j] = r[j], r[i]
 		}
@@ -33,7 +33,7 @@ func reverse(x int) int {
 	}
 	s = string(r)
 	j, err := strconv.Atoi(s)
-	if err {
+	if err != nil {
 		fmt.Println(err)
 	}
 	if j < math.MinInt32/10 || j > math.MaxInt32/10 {
