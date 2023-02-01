@@ -17,7 +17,8 @@ import (
 	_ "go_day/day8"
 	_ "go_day/day9"
 	_ "go_day/learn"
-	"go_day/learn_mysql"
+	"go_day/learn_gin"
+	_ "go_day/learn_mysql"
 	"go_day/leetcode"
 	_ "strconv"
 )
@@ -34,7 +35,8 @@ func main() {
 	strs = []string{"ab", "a"}
 	a := leetcode.LongestCommonPrefix(strs)
 	fmt.Println(a)
-	learn_mysql.LinkSql()
+	learn_gin.GinInit()
+	//learn_mysql.LinkSql()
 	// day13.Defer_func()
 	// learn.Tcp_client()
 	// learn.Tcp_server()

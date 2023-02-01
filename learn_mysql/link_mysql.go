@@ -6,6 +6,8 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+var Db *sql.DB
+
 func LinkSql() {
 	dsn := "admin:123321@tcp(192.168.174.131:3306)/learn_sql"
 
@@ -14,11 +16,12 @@ func LinkSql() {
 		fmt.Println("db err:", err)
 		return
 	}
-	defer func(db *sql.DB) {
-		err := db.Close()
-		if err != nil {
-			fmt.Println("fuck something wrong！")
-		}
-	}(db)
+	//defer func(db *sql.DB) {
+	//	err := db.Close()
+	//	if err != nil {
+	//		fmt.Println("fuck something wrong！")
+	//	}
+	//}(db)
+	Db = db
 	fmt.Println("connect success!~")
 }
