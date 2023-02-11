@@ -7,17 +7,6 @@ import (
 	"net/http"
 )
 
-//type SqlUser struct {
-//	User_mail string 'json:"user_mail" from:"user_mail"' // 问题出在使用 ·而不是‘
-//	User_pass string 'json:"user_pass" from:"user_pass"'
-//} // 这个结构体可以自己生成？
-
-type SqlUser struct {
-	User_mail string `json:"user_mail" from:"user_mail"`
-	User_pass string `json:"user_pass" from:"user_pass"`
-	//User_email interface{}
-}
-
 func GinInit() {
 	r := gin.Default()
 	//var u SqlUser
@@ -31,8 +20,20 @@ func GinInit() {
 
 	r.PUT("/save", api.Save)
 	r.GET("/select", api.SelectById)
+	r.GET("/showAll", api.ShowAll)
 	r.POST("/add", api.Update)
 	r.DELETE("/delete", api.Delete)
+
+	r.GET("/redirectTest", api.RedirectTest)
+	r.GET("/redirectURL", func(c *gin.Context) {
+		// 指定重定向的URL
+		c.Request.URL.Path = "/redirectURL2"
+		r.HandleContext(c)
+	})
+	r.GET("/redirectURL2", api.RedirectURL2)
+
+	r.GET("/goroutine1", api.Goroutine1)
+	r.GET("/goroutine2", api.Goroutine2)
 
 	err := r.Run(":0909")
 	if err != nil {
