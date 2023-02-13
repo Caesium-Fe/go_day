@@ -35,7 +35,7 @@ func GinInit() {
 	r.GET("/goroutine1", api.Goroutine1)
 	r.GET("/goroutine2", api.Goroutine2)
 
-	err := r.Run(":0909")
+	err := r.Run(":9092")
 	if err != nil {
 		return
 	}
