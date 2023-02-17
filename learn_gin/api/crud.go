@@ -21,6 +21,7 @@ http://127.0.0.1:909/showAll
 */
 func ShowAll(c *gin.Context) {
 	//var user SqlUser
+	var users []SqlUser
 	query, err := learn_mysql.Db.Query("select * from user")
 	if err != nil {
 		//	return
@@ -42,13 +43,22 @@ func ShowAll(c *gin.Context) {
 		if err := query.Scan(&user.User_id, &user.User_mail, &user.User_pass); err != nil {
 			log.Fatalln(err)
 		}
-		c.JSON(http.StatusOK, gin.H{
-			"user-id":   user.User_id,
-			"user-mail": user.User_mail,
-			"user-pass": user.User_pass,
-		})
+		users = append(users, user)
+
+		//c.PureJSON(http.StatusOK, gin.H{
+		//	"user-id":   user.User_id,
+		//	"user-mail": user.User_mail,
+		//	"user-pass": user.User_pass,
+		//})
+
 		//goto scan
 	}
+
+	c.PureJSON(http.StatusOK, gin.H{
+		"count":  len(users),
+		"result": users,
+	})
+
 	//c.JSON(http.StatusOK, gin.H{
 	//	"user-mail": user.User_mail,
 	//	"user-pass": user.User_pass,
